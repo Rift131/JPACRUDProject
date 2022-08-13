@@ -63,25 +63,25 @@ public class EquipmentServiceReference {
 	private String engFuelOilSerNum;
 	
 	@Column(name = "equipment_consumable_name")
-	private String engConsName;
+	private String equipConsName;
 	@Column(name = "equipment_consumable_manufacturer")
-	private String engConsManf;
+	private String equipConsManf;
 	@Column(name = "equipment_consumable_part_number")
-	private String engConsPrtNum;
+	private String equipConsPrtNum;
 	
 	@Column(name = "equipment_consumable_name_2")
-	private String engConsName2;
+	private String equipConsName2;
 	@Column(name = "equipment_consumable_manufacturer_2")
-	private String engConsManf2;
+	private String equipConsManf2;
 	@Column(name = "equipment_consumable_part_number_2")
-	private String engConsPrtNum2;
+	private String equipConsPrtNum2;
 	
 	@Column(name = "equipment_consumable_name_3")
-	private String engConsName3;
+	private String equipConsName3;
 	@Column(name = "equipment_consumable_manufacturer_3")
-	private String engConsManf3;
+	private String equipConsManf3;
 	@Column(name = "equipment_consumable_part_number_3")
-	private String engConsPrtNum3;
+	private String equipConsPrtNum3;
 	@Column(name = "equipment_notes")
 	private String equipNotes;
 	
@@ -311,93 +311,93 @@ public class EquipmentServiceReference {
 	}
 
 
-	public String getEngConsName() {
-		return engConsName;
+	public String getEquipConsName() {
+		return equipConsName;
 	}
 
 
-	public void setEngConsName(String engConsName) {
-		this.engConsName = engConsName;
+	public void setEquipConsName(String equipConsName) {
+		this.equipConsName = equipConsName;
 	}
 
 
-	public String getEngConsManf() {
-		return engConsManf;
+	public String getEquipConsManf() {
+		return equipConsManf;
 	}
 
 
-	public void setEngConsManf(String engConsManf) {
-		this.engConsManf = engConsManf;
+	public void setEquipConsManf(String equipConsManf) {
+		this.equipConsManf = equipConsManf;
 	}
 
 
-	public String getEngConsPrtNum() {
-		return engConsPrtNum;
+	public String getEquipConsPrtNum() {
+		return equipConsPrtNum;
 	}
 
 
-	public void setEngConsPrtNum(String engConsPrtNum) {
-		this.engConsPrtNum = engConsPrtNum;
+	public void setEquipConsPrtNum(String equipConsPrtNum) {
+		this.equipConsPrtNum = equipConsPrtNum;
 	}
 
 
-	public String getEngConsName2() {
-		return engConsName2;
+	public String getEquipConsName2() {
+		return equipConsName2;
 	}
 
 
-	public void setEngConsName2(String engConsName2) {
-		this.engConsName2 = engConsName2;
+	public void setEquipConsName2(String equipConsName2) {
+		this.equipConsName2 = equipConsName2;
 	}
 
 
-	public String getEngConsManf2() {
-		return engConsManf2;
+	public String getEquipConsManf2() {
+		return equipConsManf2;
 	}
 
 
-	public void setEngConsManf2(String engConsManf2) {
-		this.engConsManf2 = engConsManf2;
+	public void setEquipConsManf2(String equipConsManf2) {
+		this.equipConsManf2 = equipConsManf2;
 	}
 
 
-	public String getEngConsPrtNum2() {
-		return engConsPrtNum2;
+	public String getEquipConsPrtNum2() {
+		return equipConsPrtNum2;
 	}
 
 
-	public void setEngConsPrtNum2(String engConsPrtNum2) {
-		this.engConsPrtNum2 = engConsPrtNum2;
+	public void setEquipConsPrtNum2(String equipConsPrtNum2) {
+		this.equipConsPrtNum2 = equipConsPrtNum2;
 	}
 
 
-	public String getEngConsName3() {
-		return engConsName3;
+	public String getEquipConsName3() {
+		return equipConsName3;
 	}
 
 
-	public void setEngConsName3(String engConsName3) {
-		this.engConsName3 = engConsName3;
+	public void setEquipConsName3(String equipConsName3) {
+		this.equipConsName3 = equipConsName3;
 	}
 
 
-	public String getEngConsManf3() {
-		return engConsManf3;
+	public String getEquipConsManf3() {
+		return equipConsManf3;
 	}
 
 
-	public void setEngConsManf3(String engConsManf3) {
-		this.engConsManf3 = engConsManf3;
+	public void setEquipConsManf3(String equipConsManf3) {
+		this.equipConsManf3 = equipConsManf3;
 	}
 
 
-	public String getEngConsPrtNum3() {
-		return engConsPrtNum3;
+	public String getEquipConsPrtNum3() {
+		return equipConsPrtNum3;
 	}
 
 
-	public void setEngConsPrtNum3(String engConsPrtNum3) {
-		this.engConsPrtNum3 = engConsPrtNum3;
+	public void setEquipConsPrtNum3(String equipConsPrtNum3) {
+		this.equipConsPrtNum3 = equipConsPrtNum3;
 	}
 
 
@@ -420,12 +420,13 @@ public class EquipmentServiceReference {
 				+ engOilFltrPrtNum + ", engAirFltrManf=" + engAirFltrManf + ", engAirFltrPrtNum=" + engAirFltrPrtNum
 				+ ", engFuelSpec=" + engFuelSpec + ", engFuelFltrManf=" + engFuelFltrManf + ", engFuelFltrPrtNum="
 				+ engFuelFltrPrtNum + ", engFuelOil=" + engFuelOil + ", engFuelOilManf=" + engFuelOilManf
-				+ ", engFuelOilName=" + engFuelOilName + ", engFuelOilSerNum=" + engFuelOilSerNum + ", engConsName="
-				+ engConsName + ", engConsManf=" + engConsManf + ", engConsPrtNum=" + engConsPrtNum + ", engConsName2="
-				+ engConsName2 + ", engConsManf2=" + engConsManf2 + ", engConsPrtNum2=" + engConsPrtNum2
-				+ ", engConsName3=" + engConsName3 + ", engConsManf3=" + engConsManf3 + ", engConsPrtNum3="
-				+ engConsPrtNum3 + ", equipNotes=" + equipNotes + "]";
+				+ ", engFuelOilName=" + engFuelOilName + ", engFuelOilSerNum=" + engFuelOilSerNum + ", equipConsName="
+				+ equipConsName + ", equipConsManf=" + equipConsManf + ", equipConsPrtNum=" + equipConsPrtNum
+				+ ", equipConsName2=" + equipConsName2 + ", equipConsManf2=" + equipConsManf2 + ", equipConsPrtNum2="
+				+ equipConsPrtNum2 + ", equipConsName3=" + equipConsName3 + ", equipConsManf3=" + equipConsManf3
+				+ ", equipConsPrtNum3=" + equipConsPrtNum3 + ", equipNotes=" + equipNotes + "]";
 	}
+
 
 	
 	
