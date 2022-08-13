@@ -15,7 +15,7 @@ public class EquipmentController {
 	
 	@RequestMapping(path={"/", "home.do"})
 	public String home(Model model) {
-		model.addAttribute("DELETEME", dao.findById(1)); // DEBUG LATER
+		//model.addAttribute("DELETEME", dao.findById(1)); // DEBUG LATER
 		return "index";
 	}
 	
