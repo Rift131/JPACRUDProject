@@ -13,11 +13,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class EquipmentServiceReferencesTest {
+class EquipmentServiceReferenceTest {
 	
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private EquipmentServiceReferences esr;
+	private EquipmentServiceReference esr;
 	
 
 	@BeforeAll
@@ -33,7 +33,7 @@ class EquipmentServiceReferencesTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		esr = em.find(EquipmentServiceReferences.class, 1);
+		esr = em.find(EquipmentServiceReference.class, 1);
 	}
 
 	@AfterEach

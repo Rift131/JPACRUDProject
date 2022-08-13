@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "equipment_service_references")
-public class EquipmentServiceReferences {
+public class EquipmentServiceReference {
 
 	// REQUIRED NOT NULL FIELDS
 	@Id
@@ -86,7 +86,7 @@ public class EquipmentServiceReferences {
 	private String equipNotes;
 	
 	
-	public EquipmentServiceReferences() {
+	public EquipmentServiceReference() {
 		super();
 	}
 
@@ -413,7 +413,7 @@ public class EquipmentServiceReferences {
 
 	@Override
 	public String toString() {
-		return "EquipmentServiceReferences [id=" + id + ", equipName=" + equipName + ", equipManf=" + equipManf
+		return "EquipmentServiceReference [id=" + id + ", equipName=" + equipName + ", equipManf=" + equipManf
 				+ ", equipMdl=" + equipMdl + ", equipSerNum=" + equipSerNum + ", engManf=" + engManf + ", engMdl="
 				+ engMdl + ", engSerNum=" + engSerNum + ", engOilManf=" + engOilManf + ", engOilType=" + engOilType
 				+ ", engOilViscGrd=" + engOilViscGrd + ", engOilFltrManf=" + engOilFltrManf + ", engOilFltrPrtNum="

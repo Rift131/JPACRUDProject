@@ -2,12 +2,12 @@ package com.skilldistillery.EquipmentServiceData.data;
 
 import java.util.List;
 
-import com.skilldistillery.EquipmentServiceData.entities.EquipmentServiceReferences;
+import com.skilldistillery.EquipmentServiceData.entities.EquipmentServiceReference;
 
 public interface EquipmentDAO {
 	// need name of object here
-	EquipmentServiceReferences findById(int equpId);
-	List<EquipmentServiceReferences> findAll();
+	EquipmentServiceReference findById(int equpId);
+	List<EquipmentServiceReference> findAll();
 	
 	
 }

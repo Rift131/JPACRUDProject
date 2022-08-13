@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.skilldistillery.EquipmentServiceData.entities.EquipmentServiceReferences;
+import com.skilldistillery.EquipmentServiceData.entities.EquipmentServiceReference;
 
 @Service
 @Transactional
@@ -16,12 +16,12 @@ public class EquipmentDAOImpl implements EquipmentDAO {
 	private EntityManager em;
 
 	@Override
-	public EquipmentServiceReferences findById(int id) {
-		return em.find(EquipmentServiceReferences.class, id);
+	public EquipmentServiceReference findById(int id) {
+		return em.find(EquipmentServiceReference.class, id);
 	}
 
 	@Override
-	public List<EquipmentServiceReferences> findAll() {
+	public List<EquipmentServiceReference> findAll() {
 
 		return null;
 	}
