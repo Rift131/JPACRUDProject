@@ -45,7 +45,7 @@ class EquipmentServiceReferencesTest {
 	@Test
 	void test() {
 		assertNotNull(esr);
-		assertEquals("Chainsaw", esr.getEquipmentName());
+		assertEquals("Chainsaw", esr.getEquipName());
 	}
 
 }
