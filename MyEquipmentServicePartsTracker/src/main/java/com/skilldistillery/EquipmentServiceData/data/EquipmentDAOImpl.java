@@ -220,4 +220,5 @@ public class EquipmentDAOImpl implements EquipmentDAO {
 		return equipmentRemoved;
 	}
 
+
 }

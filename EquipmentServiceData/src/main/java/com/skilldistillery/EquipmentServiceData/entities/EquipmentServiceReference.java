@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "equipment_service_references")
+@Table(name = "equipment_service_reference")
 public class EquipmentServiceReference {
 
 	// REQUIRED NOT NULL FIELDS
