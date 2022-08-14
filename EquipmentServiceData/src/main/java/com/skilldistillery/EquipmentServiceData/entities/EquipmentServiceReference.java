@@ -22,16 +22,18 @@ public class EquipmentServiceReference {
 	@Column(name = "equipment_model")
 	private String equipMdl;
 	
-	
 	// NULL DEFAULT FIELDS
 	@Column(name = "equipment_serial_number")
 	private String equipSerNum;
+	
+	
 	@Column(name = "engine_manufacturer")
 	private String engManf;
 	@Column(name = "engine_model")
 	private String engMdl;
 	@Column(name = "engine_serial_number")
 	private String engSerNum;
+	
 	@Column(name = "engine_oil_manufacturer")
 	private String engOilManf;
 	@Column(name = "engine_oil_type")

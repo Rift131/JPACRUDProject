@@ -27,23 +27,26 @@
 					</tr>
 					<tr>
 					<td>
-					<strong>${result.equipSerNum }</strong>
+					<strong>Equipment ID: ${result.id} </strong>
 					</td>
 					</tr>
-					
+					<tr>
+					<td>
+					<strong>Equipment S/N: ${result.equipSerNum }</strong>
+					</td>
+					</tr>
 					<tr>
 						<td><strong> ENGINE MANF: </strong> ${result.engManf }  
 						<strong> ENGINE MODEL: </strong>${result.engMdl }
-						<strong> ENGINE S/N: </strong>${result.engMdl }
-						<strong> ENGINE MODEL: </strong>${result.engMdl }
+						<strong> ENGINE S/N: </strong>${result.engSerNum }
 						</tr>
 						<tr>
 						<td>
 						<strong> OIL MANF: </strong> ${result.engOilManf }
-						<strong> OIL TYPE: </strong> ${result.engOilManf }
-						<strong> OIL VISC / GRADE: </strong> ${result.engOilManf }
-						<strong> OIL FILTER MANF: </strong> ${result.engOilManf }
-						<strong> OIL S/N: </strong> ${result.engOilManf }
+						<strong> OIL TYPE: </strong> ${result.engOilType }
+						<strong> OIL VISC / GRADE: </strong> ${result.engOilViscGrd }
+						<strong> OIL FILTER MANF: </strong> ${result.engOilFltrManf }
+						<strong> OIL S/N: </strong> ${result.engOilFltrPrtNum }
 						</td> 
 					</tr>
 					<tr>
@@ -91,7 +94,7 @@
 					
 			</table>
 					<br></br>
-					<h3>NOTES</h3>
+					<h5>NOTES</h5>
 						<p>${result.equipNotes }</p>
 						
 		</c:otherwise>
@@ -102,7 +105,8 @@
 <input type="submit" value="Delete" class="delete"/>
    </form>
 <form action="updateEquipment.do" method="GET">
-<input type="hidden" value="${result.id}" name="data" />
+<!-- the name attribute must match the parameter name of the method it's being passed to -->
+<input type="hidden" value="${result.id}" name="id" />
 <input type="submit" value="Update" class="update"/> 
 </form> 
 	<p></p>

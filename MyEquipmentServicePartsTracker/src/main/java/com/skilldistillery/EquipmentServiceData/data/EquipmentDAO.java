@@ -10,14 +10,15 @@ public interface EquipmentDAO {
 	
 	// R: RETRIEVE
 	EquipmentServiceReference findById(int equpId);
-	List<EquipmentServiceReference> findAll();
 	List<EquipmentServiceReference> findByKeyword(String input);
+	List<EquipmentServiceReference> findAllEquipment();
 	
 	// U: UPDATE
 	EquipmentServiceReference update(int id, EquipmentServiceReference equipment);
 	
 	// D: DESTROY
 	boolean destroy(int id);
+
 
 	
 	

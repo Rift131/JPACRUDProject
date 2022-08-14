@@ -33,7 +33,12 @@
       <br></br>
    </form>
  
-  <a href="createEquipment.html">Add New Equipment</a>
+  <h3>Add New Equipment</h3>
+    <form action="createEquipment.do" method="GET">
+     <input type="submit" value="Add New Equipment" class="button"/><br />
+      <br></br>
+   </form>
+  <!-- <a href=""><input type="submit" value="Add New Equipment" class ="button"/></a> -->
     <!-- <form action="createEquipment.do" method="GET">
      <input type="submit" value="New Equipment Entry" class="button"/><br />
       <br></br>

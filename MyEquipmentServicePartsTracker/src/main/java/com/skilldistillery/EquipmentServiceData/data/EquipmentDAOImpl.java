@@ -11,12 +11,12 @@ import org.springframework.stereotype.Service;
 
 import com.skilldistillery.EquipmentServiceData.entities.EquipmentServiceReference;
 
-@Service
 @Transactional
+@Service
 public class EquipmentDAOImpl implements EquipmentDAO {
 	// always keep the @Persistence at the class level for each class
 	@PersistenceContext
-	private EntityManager em;
+	public EntityManager em;
 
 	// ***********************************************
 	// C: CREATE
@@ -24,10 +24,8 @@ public class EquipmentDAOImpl implements EquipmentDAO {
 
 	@Override
 	public EquipmentServiceReference create(EquipmentServiceReference esr) {
-		em.getTransaction().begin();
 		em.persist(esr);
 		em.flush();
-		em.getTransaction().commit();
 		return esr;
 	}
 
@@ -43,9 +41,10 @@ public class EquipmentDAOImpl implements EquipmentDAO {
 	}
 
 	@Override
-	public List<EquipmentServiceReference> findAll() {
+	public List<EquipmentServiceReference> findAllEquipment() {
 		List<EquipmentServiceReference> allEquipment = null;
-		String jpql = "SELECT esr FROM EquipmentServiceReference esr WHERE id > 0 ORDER BY esr.id";
+		String jpql = "SELECT esr FROM EquipmentServiceReference esr WHERE esr.id > 0 ORDER BY esr.equipName";
+		// "
 		allEquipment = em.createQuery(jpql, EquipmentServiceReference.class).getResultList();
 		return allEquipment;
 	}

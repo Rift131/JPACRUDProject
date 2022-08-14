@@ -5,17 +5,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Update Equipment</title>
+<title>Add New Equipment</title>
 </head>
 <body>
  <a href= "home.do" >Home</a>
  <main class="container-fluid">
- <h1>Update Equipment</h1>
- 	<form action="updatedEquipment.do" method="GET">
-		<strong>MANF:</strong> <input type="text" name="equipManf" value="${result.equipManf}"/> <br /> 
-		<strong>CATEGORY:</strong> <input type="text" name="equipName" value="${result.equipName }"/><br />
+ <h1>Add New Equipment</h1>
+ 	<form action="createEquipmentResult.do" method="GET">
+		<strong>MANF:</strong> <input type="text" name="equipManf" Required="Required"/> <br /> 
+		<strong>CATEGORY:</strong> <input type="text" name="equipName" Required="Required"/><br />
 		<label for="equipName"><em> Category Examples: Lawn mower. Chainsaw, Weed Trimmer</em></label> <br /> 
-		<strong>Model:</strong> <input type="text" name="equipMdl" value="${result.equipMdl} }"/> <br /> 
+		<strong>Model:</strong> <input type="text" name="equipMdl" Required="Required"/> <br /> 
 		<strong>S/N:</strong> <input type="text" name="equipSerNum" /> <br /> 
 		<br></br>
 		<strong>ENGINE MANF:</strong> <input type="text" name="engManf" /> <br /> 

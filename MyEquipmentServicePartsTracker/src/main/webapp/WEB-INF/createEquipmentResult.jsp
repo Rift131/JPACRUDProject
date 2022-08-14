@@ -24,23 +24,27 @@
 					</tr>
 					<tr>
 					<td>
-					<strong>${result.equipSerNum }</strong>
+					<strong>Equipment ID: ${result.id} </strong>
+					</td>
+					</tr>
+					<tr>
+					<td>
+					<strong>Equipment S/N: ${result.equipSerNum }</strong>
 					</td>
 					</tr>
 					
 					<tr>
 						<td><strong> ENGINE MANF: </strong> ${result.engManf }  
 						<strong> ENGINE MODEL: </strong>${result.engMdl }
-						<strong> ENGINE S/N: </strong>${result.engMdl }
-						<strong> ENGINE MODEL: </strong>${result.engMdl }
+						<strong> ENGINE S/N: </strong>${result.engSerNum }
 						</tr>
 						<tr>
 						<td>
 						<strong> OIL MANF: </strong> ${result.engOilManf }
-						<strong> OIL TYPE: </strong> ${result.engOilManf }
-						<strong> OIL VISC / GRADE: </strong> ${result.engOilManf }
-						<strong> OIL FILTER MANF: </strong> ${result.engOilManf }
-						<strong> OIL S/N: </strong> ${result.engOilManf }
+						<strong> OIL TYPE: </strong> ${result.engOilType }
+						<strong> OIL VISC / GRADE: </strong> ${result.engOilViscGrd }
+						<strong> OIL FILTER MANF: </strong> ${result.engOilFltrManf }
+						<strong> OIL S/N: </strong> ${result.engOilFltrPrtNum }
 						</td> 
 					</tr>
 					<tr>
@@ -86,8 +90,22 @@
 						</td> 
 					</tr>
 					
-		</table>
+			</table>
+					<br></br>
+					<h3>NOTES</h3>
+						<p>${result.equipNotes }</p>
+						<br></br>
+						
+						
 	</c:otherwise>
 </c:choose>
+<form action="deleteEquipment.do" method="POST">
+<input type="hidden" value="${result.id}" name="DeleteThisEquipment" />
+<input type="submit" value="Delete" class="delete"/>
+   </form>
+<form action="updateEquipment.do" method="GET">
+<input type="hidden" value="${result.id}" name="data" />
+<input type="submit" value="Update" class="update"/> 
+</form>
 </body>
 </html>
