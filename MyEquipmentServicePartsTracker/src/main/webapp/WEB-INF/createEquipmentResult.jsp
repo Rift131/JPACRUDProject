@@ -1,25 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Equipment By Id</title>
+<title>Your New Equipment</title>
 </head>
 <body>
  <a href= "home.do" >Home</a>
- <h1>Equipment Matching the Submitted Id</h1>
-<br></br>
-	<c:choose>
-
-		<c:when test="${empty result }">
-			<h2>No equipment listed under that ID number</h2>
+ <br></br>
+ <h1>Your New Equipment</h1>
+ 	<c:choose>
+ 		<c:when test="${empty result }">
+			<h2>Equipment was unable to be added.</h2>
 		</c:when>
-
 		<c:otherwise>
 			<table>
-					
 					<tr>
 					<td>
 					<h2>${result.equipManf } ${result.equipName } ${result.equipMdl }</h2>
@@ -89,22 +86,8 @@
 						</td> 
 					</tr>
 					
-			</table>
-					<br></br>
-					<h3>NOTES</h3>
-						<p>${result.equipNotes }</p>
-						
-		</c:otherwise>
-	</c:choose>
-	
-<form action="deleteEquipment.do" method="POST">
-<input type="hidden" value="${result.id}" name="DeleteThisEquipment" />
-<input type="submit" value="Delete" class="delete"/>
-   </form>
-<form action="updateEquipment.do" method="GET">
-<input type="hidden" value="${result.id}" name="data" />
-<input type="submit" value="Update" class="update"/> 
-</form> 
-	<p></p>
+		</table>
+	</c:otherwise>
+</c:choose>
 </body>
 </html>

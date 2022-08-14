@@ -14,7 +14,7 @@ import com.skilldistillery.EquipmentServiceData.entities.EquipmentServiceReferen
 @Service
 @Transactional
 public class EquipmentDAOImpl implements EquipmentDAO {
-	// always keep the persistence at the class level for each class
+	// always keep the @Persistence at the class level for each class
 	@PersistenceContext
 	private EntityManager em;
 
