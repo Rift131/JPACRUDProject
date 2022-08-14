@@ -37,13 +37,15 @@ public class EquipmentDAOImpl implements EquipmentDAO {
 
 	@Override
 	public EquipmentServiceReference findById(int id) {
+//		EquipmentServiceReference 
+//		String jpql = "SELECT esr FROM EquipmentServiceReference esr WHERE esr.id = :id ORDER BY esr.id";
 		return em.find(EquipmentServiceReference.class, id);
 	}
 
 	@Override
 	public List<EquipmentServiceReference> findAll() {
 		List<EquipmentServiceReference> allEquipment = null;
-		String jpql = "SELECT esr FROM esr.EquipmentServiceReference WHERE id > 0 ORDER BY esr.id";
+		String jpql = "SELECT esr FROM EquipmentServiceReference esr WHERE id > 0 ORDER BY esr.id";
 		allEquipment = em.createQuery(jpql, EquipmentServiceReference.class).getResultList();
 		return allEquipment;
 	}

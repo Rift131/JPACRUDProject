@@ -13,7 +13,7 @@
  
  <h3>Find your equipment by its Id number</h3>
  <form action="searchById.do" method="GET">
-     <input type="number" name="data" /><br />
+     <input type="number" name="eid" /><br />
      <br>
      <input type="submit" value="Submit" class="button"/><br />
      <br></br>

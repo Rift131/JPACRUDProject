@@ -14,7 +14,7 @@ public class EquipmentServiceReference {
 	// REQUIRED NOT NULL FIELDS
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	@Column(name = "equipment_name")
 	private String equipName;
 	@Column(name = "equipment_manufacturer")
@@ -42,19 +42,22 @@ public class EquipmentServiceReference {
 	private String engOilFltrManf;
 	@Column(name = "engine_oil_filer_part_number")
 	private String engOilFltrPrtNum;
+	
 	@Column(name = "engine_air_filter_manufacturer")
 	private String engAirFltrManf;
 	@Column(name = "engine_air_filter_part_number")
 	private String engAirFltrPrtNum;
+	
 	@Column(name = "egnine_fuel_specifications")
 	private String engFuelSpec;
 	@Column(name = "engine_fuel_filter_manufacturer")
 	private String engFuelFltrManf;
 	@Column(name = "engine_fuel_filter_part_number")
 	private String engFuelFltrPrtNum;
+	
 	// DEFAULT VALUE: TINYINT(1) (FALSE)
-		@Column(name = "engine_fuel_oil")
-		private Boolean engFuelOil;
+	@Column(name = "engine_fuel_oil")
+	private Boolean engFuelOil;
 	@Column(name = "engine_fuel_oil_manufacturer")
 	private String engFuelOilManf;
 	@Column(name = "engine_fuel_oil_name")
@@ -82,6 +85,7 @@ public class EquipmentServiceReference {
 	private String equipConsManf3;
 	@Column(name = "equipment_consumable_part_number_3")
 	private String equipConsPrtNum3;
+	
 	@Column(name = "equipment_notes")
 	private String equipNotes;
 	
@@ -96,7 +100,7 @@ public class EquipmentServiceReference {
 	}
 
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

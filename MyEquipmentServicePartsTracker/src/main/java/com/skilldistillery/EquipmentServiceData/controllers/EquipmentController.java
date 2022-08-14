@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.skilldistillery.EquipmentServiceData.data.EquipmentDAO;
+import com.skilldistillery.EquipmentServiceData.entities.EquipmentServiceReference;
 
 @Controller
 public class EquipmentController {
@@ -19,7 +20,9 @@ public class EquipmentController {
 		return "index";
 	}
 	@RequestMapping(path={"searchById.do"})
-	public String searchById(Model model) {
+	public String searchById(Integer eid, Model model) {
+		EquipmentServiceReference equipById = dao.findById(eid);
+		model.addAttribute("result", equipById);
 		return "searchById";
 	}
 	@RequestMapping(path={"searchByKeyword.do"})
@@ -30,5 +33,7 @@ public class EquipmentController {
 	public String showAllEquipment(Model model) {
 		return "showAllEquipment";
 	}
+	
+	
 	
 }
