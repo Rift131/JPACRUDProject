@@ -18,5 +18,17 @@ public class EquipmentController {
 		//model.addAttribute("DELETEME", dao.findById(1)); // DEBUG LATER
 		return "index";
 	}
+	@RequestMapping(path={"searchById.do"})
+	public String searchById(Model model) {
+		return "searchById";
+	}
+	@RequestMapping(path={"searchByKeyword.do"})
+	public String searchByKeyword(Model model) {
+		return "searchByKeyword";
+	}
+	@RequestMapping(path={"showAllEquipment.do"})
+	public String showAllEquipment(Model model) {
+		return "showAllEquipment";
+	}
 	
 }

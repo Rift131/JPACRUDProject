@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>EquipmentById</title>
+<title>Equipment By Id</title>
 </head>
 <body>
- <a href= "Index.jsp" >Home</a>
+ <a href= "home.do" >Home</a>
  <h1>Equipment Matching the Id</h1>
 
 </body>

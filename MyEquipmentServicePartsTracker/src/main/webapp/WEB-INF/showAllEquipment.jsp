@@ -7,7 +7,7 @@
 <title>Current Inventory</title>
 </head>
 <body>
- <a href= "Index.jsp" >Home</a>
+ <a href= "home.do" >Home</a>
 <h1>Your Current Equipment Inventory</h1>
 </body>
 </html>

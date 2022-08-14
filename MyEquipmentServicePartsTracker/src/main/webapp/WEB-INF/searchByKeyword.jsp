@@ -7,7 +7,7 @@
 <title>Keyword Search Results</title>
 </head>
 <body>
- <a href= "Index.jsp" >Home</a>
+ <a href= "home.do" >Home</a>
 <h1>Matches Related To Your Search</h1>
 </body>
 </html>
