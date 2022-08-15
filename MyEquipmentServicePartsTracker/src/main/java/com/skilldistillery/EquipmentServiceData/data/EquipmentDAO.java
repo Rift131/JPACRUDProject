@@ -13,7 +13,7 @@ public interface EquipmentDAO {
 	EquipmentServiceReference create(EquipmentServiceReference esr);
 	
 	// R: RETRIEVE
-	EquipmentServiceReference findById(int equpId);
+	EquipmentServiceReference findById(Integer equpId);
 	List<EquipmentServiceReference> findByKeyword(String input);
 	List<EquipmentServiceReference> findAllEquipment();
 	
@@ -21,7 +21,8 @@ public interface EquipmentDAO {
 	EquipmentServiceReference update(Integer id, EquipmentServiceReference esr);
 	
 	// D: DESTROY
-	boolean destroy(int id);
+
+	boolean destroy(Integer delete);
 
 
 

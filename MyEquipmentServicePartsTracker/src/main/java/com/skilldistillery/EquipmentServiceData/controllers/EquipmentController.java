@@ -130,9 +130,11 @@ public class EquipmentController {
 	// ***********************************************
 	// D: DESTROY
 	// ***********************************************
-	@RequestMapping(path= {"updateEquipment.do"})
-//	public String updateEquipment(Integer id, Model model) {
-//		model.addAttribute("result", dao.findById(id));
-//		return "updateEquipment";
-//	}
-//}
+	@RequestMapping(path= {"deleteEquipment.do"})
+	public String deleteEquipment(Integer id, Model model) {
+		System.out.println("in deleteEquipment" + id);
+		//EquipmentServiceReference delete = dao.findById(id);
+		model.addAttribute("result", dao.destroy(id));
+		return "deleteComplete";
+	}
+}

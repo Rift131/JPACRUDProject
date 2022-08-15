@@ -33,7 +33,7 @@ public class EquipmentDAOImpl implements EquipmentDAO {
 	// ***********************************************
 
 	@Override
-	public EquipmentServiceReference findById(int id) {
+	public EquipmentServiceReference findById(Integer id) {
 //		EquipmentServiceReference 
 //		String jpql = "SELECT esr FROM EquipmentServiceReference esr WHERE esr.id = :id ORDER BY esr.id";
 		return em.find(EquipmentServiceReference.class, id);
@@ -115,13 +115,14 @@ System.out.println("inside update: ESR Object: " + managedEsr);
 	// ***********************************************
 
 	@Override
-	public boolean destroy(int id) {
+	public boolean destroy(Integer delete) {
+		EquipmentServiceReference remove = findById(delete);
 		boolean equipmentRemoved = false;
-		EquipmentServiceReference equipmentDelete = em.find(EquipmentServiceReference.class, id);
-		
-		if (equipmentDelete != null) {
-			em.remove(equipmentDelete);
-			equipmentRemoved = !em.contains(equipmentDelete);
+		System.out.println("in DAO destroy");
+		System.out.println("equipmentDelete: " + delete);
+		if (remove != null) {
+			em.remove(remove);
+			equipmentRemoved = !em.contains(remove);
 		}
 		return equipmentRemoved;
 	}
