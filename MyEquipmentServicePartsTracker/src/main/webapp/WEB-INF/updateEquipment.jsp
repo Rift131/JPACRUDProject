@@ -67,7 +67,7 @@
 		<strong>CP PART NO. or S/N:</strong> <input type="text" name="equipConsPrtNum3" value="<c:out value="${result.equipConsPrtNum3}"/>"> <br /> 
 		<br></br>
         <label for="equipNotes">NOTES</label>
-        <textarea rows="12" cols="50" class="equipNotes" name ="equipNotes" <c:out value="${result.equipNotes}"/>></textarea>
+        <input TYPE="text" class="equipNotes" name ="equipNotes" value="${result.equipNotes}"/>
 		<br></br>
 <!-- the name attribute must match the parameter name of the method it's being passed to -->
 <input type="hidden" value="${result.id} " name="id" /> 
