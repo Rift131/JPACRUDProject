@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
+import org.springframework.ui.Model;
+
 import com.skilldistillery.EquipmentServiceData.entities.EquipmentServiceReference;
 
 public interface EquipmentDAO {
@@ -16,10 +18,13 @@ public interface EquipmentDAO {
 	List<EquipmentServiceReference> findAllEquipment();
 	
 	// U: UPDATE
-	EquipmentServiceReference update(Integer id);
+	EquipmentServiceReference update(Integer id, EquipmentServiceReference esr);
 	
 	// D: DESTROY
 	boolean destroy(int id);
+
+
+
 
 
 

@@ -106,7 +106,7 @@
    </form>
 <form action="updateEquipment.do" method="GET">
 <!-- the name attribute must match the parameter name of the method it's being passed to -->
-<input type="hidden" value="${result.id}" name="id" />
+<input type="hidden" value="${result.id}" name="id" /> 
 <input type="submit" value="Update" class="update"/> 
 </form> 
 	<p></p>

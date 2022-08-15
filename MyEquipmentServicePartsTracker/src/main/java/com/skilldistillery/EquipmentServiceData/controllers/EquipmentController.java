@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.skilldistillery.EquipmentServiceData.data.EquipmentDAO;
 import com.skilldistillery.EquipmentServiceData.entities.EquipmentServiceReference;
@@ -82,16 +81,48 @@ public class EquipmentController {
 	// Present the form
 	@RequestMapping(path= {"updateEquipment.do"})
 	public String updateEquipment(Integer id, Model model) {
-		EquipmentServiceReference equipById = dao.update(id);
-//		// dao find by id
-		model.addAttribute("result", equipById);
+		model.addAttribute("result", dao.findById(id));
 		return "updateEquipment";
 	}
 	// Present the updates
 	@RequestMapping(path= {"updatedEquipment.do"})
-	public String updatedEquipment(Integer id, Model model) {
-		EquipmentServiceReference equipUpdated = dao.findById(id);
-		model.addAttribute("result", equipUpdated);
+	public String updatedEquipment(EquipmentServiceReference esr, Model model, Integer id, String equipName, String equipManf, String equipMdl, String equipSerNum, String engManf, String engMdl, String engSerNum, String engOilManf, String engOilType, String  engOilViscGrd, String  engOilFltrManf, String  engOilFltrPrtNum, String  engAirFltrManf, String  engAirFltrPrtNum, String  engFuelSpec, String  engFuelFltrManf, String  engFuelFltrPrtNum, Boolean engFuelOil, String engFuelOilManf, String engFuelOilSerNum, String equipConsName, String equipConsManf, String equipConsPrtNum, String equipConsName2, String equipConsManf2, String equipConsPrtNum2, String equipConsName3, String equipConsManf3, String equipConsPrtNum3, String equipNotes) {
+		esr.setEquipName(equipName);
+		esr.setEquipManf(equipManf);
+		esr.setEquipSerNum(equipSerNum);
+		esr.setEngManf(engManf);
+		esr.setEngMdl(engMdl);
+		esr.setEngSerNum(engSerNum);
+		esr.setEngOilManf(engOilManf);
+		esr.setEngOilType(engOilType);
+		esr.setEngOilViscGrd(engOilViscGrd);
+		esr.setEngOilFltrManf(engOilFltrManf);
+		esr.setEngOilFltrPrtNum(engOilFltrPrtNum);
+		esr.setEngAirFltrManf(engAirFltrManf);
+		esr.setEngAirFltrPrtNum(engAirFltrPrtNum);
+		esr.setEngFuelSpec(engFuelSpec);
+		esr.setEngFuelFltrManf(engFuelFltrManf);
+		esr.setEngFuelFltrPrtNum(engFuelFltrPrtNum);
+		esr.setEngFuelOil(engFuelOil);
+		esr.setEngFuelOilManf(engFuelOilManf);
+		esr.setEngFuelOilName(engFuelOilSerNum);
+		esr.setEngFuelOilSerNum(engFuelOilSerNum);
+		esr.setEquipConsName(equipConsName);
+		esr.setEquipConsManf(equipConsManf);
+		esr.setEquipConsPrtNum(equipConsPrtNum);
+		esr.setEquipConsName2(equipConsName2);
+		esr.setEquipConsManf2(equipConsManf2);
+		esr.setEquipConsPrtNum2(equipConsPrtNum2);
+		esr.setEquipConsName3(equipConsName3);
+		esr.setEquipConsManf3(equipConsManf3);
+		esr.setEquipConsPrtNum3(equipConsPrtNum3);
+		esr.setEquipNotes(equipNotes);
+		
+//		EquipmentServiceReference equipById = dao.update(id, esr);
+		model.addAttribute("result", esr);
+		//EquipmentServiceReference equipById = dao.update(id, esr);
+		dao.update(id, esr);
+//		// dao find by id
 		return "updatedEquipment";
 	}
 	
@@ -99,7 +130,9 @@ public class EquipmentController {
 	// ***********************************************
 	// D: DESTROY
 	// ***********************************************
-	
-	
-	
-}
+	@RequestMapping(path= {"updateEquipment.do"})
+//	public String updateEquipment(Integer id, Model model) {
+//		model.addAttribute("result", dao.findById(id));
+//		return "updateEquipment";
+//	}
+//}

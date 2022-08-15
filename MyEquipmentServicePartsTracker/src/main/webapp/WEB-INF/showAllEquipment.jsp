@@ -101,8 +101,10 @@
 <input type="submit" value="Delete" class="delete"/>
    </form>
 <form action="updateEquipment.do" method="GET">
-<input type="hidden" value="${result.id}" name="data" />
+<!-- the name attribute must match the parameter name of the method it's being passed to -->
+<input type="hidden" value="${result.id}" name="id" />
 <input type="submit" value="Update" class="update"/> 
+</form> 
 				</form>	
 	</c:forEach>
 		</c:otherwise>

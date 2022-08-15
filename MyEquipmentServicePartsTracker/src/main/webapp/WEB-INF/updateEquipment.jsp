@@ -22,7 +22,7 @@
  
  
  
- 	<form action="updatedEquipment.do" method="GET">
+ 	<form action="updatedEquipment.do" method="POST">
 		<strong>MANF:</strong> <input type="text" name="equipManf" value="<c:out value="${result.equipManf}"/>"> <br /> 
 		<strong>CATEGORY:</strong> <input type="text" name="equipName" value="<c:out value="${result.equipName }"/>"><br />
 		<label for="equipName"><em> Category Examples: Lawn mower. Chainsaw, Weed Trimmer</em></label> <br /> 
@@ -69,14 +69,13 @@
         <label for="equipNotes">NOTES</label>
         <textarea rows="12" cols="50" class="equipNotes"></textarea>
 		<br></br>
+<!-- the name attribute must match the parameter name of the method it's being passed to -->
+/<input type="hidden" value="${result.id} " name="id" /> 
+<input type="submit" value="Update" class="update"/> 
 	</form>
 		</c:otherwise>
 	</c:choose>
-<!-- the name attribute must match the parameter name of the method it's being passed to -->
-		<form action="updatedEquipment.do" method="GET">
-<input type="hidden" value="${result.id} " name="id" />
-<input type="submit" value="Update" class="update"/> 
-</form> 
-	</main>
+<!-- </form> 
+ -->	</main>
 </body>
 </html>
