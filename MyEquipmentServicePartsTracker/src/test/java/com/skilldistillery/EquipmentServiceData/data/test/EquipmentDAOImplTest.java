@@ -1,4 +1,4 @@
-package com.skilldistillery.EquipmentServiceData.entities;
+package com.skilldistillery.EquipmentServiceData.data.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -13,13 +13,17 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class EquipmentServiceReferenceTest {
-	
+import com.skilldistillery.EquipmentServiceData.data.EquipmentDAO;
+import com.skilldistillery.EquipmentServiceData.entities.EquipmentServiceReference; 
+
+class EquipmentDAOImplTest {
+
+
 	private static EntityManagerFactory emf;
 	private EntityManager em;
 	private EquipmentServiceReference esr;
+	private EquipmentDAO dao;
 	
-
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		emf = Persistence.createEntityManagerFactory("EquipmentServiceData");
@@ -35,6 +39,7 @@ class EquipmentServiceReferenceTest {
 		em = emf.createEntityManager();
 		esr = em.find(EquipmentServiceReference.class, 1);
 	}
+	
 
 	@AfterEach
 	void tearDown() throws Exception {
@@ -43,28 +48,17 @@ class EquipmentServiceReferenceTest {
 	}
 
 	@Test
-	void test_row_1_not_void() {
+	void test() {
 		assertNotNull(esr);
-	}
-	
-	@Test
-	void test_row_1_equipment_name_is_Chainsaw() {
 		assertEquals("Chainsaw", esr.getEquipName());
 	}
-	@Test
-	void test_row_1_equipment_verify_expected_SN() {
-		assertEquals("12345679", esr.getEquipSerNum());
-	}
-	@Test
-	void test_row_1_equipment_verify_expected_engine_manufacturer() {
-		assertEquals("Kohler", esr.getEngManf());
-	}
-	@Test
-	void test_row_1_equipment_verify_expected_oil_manf() {
-		assertEquals("FRAM", esr.getEngFuelFltrManf());
-	}
-	@Test
-	void test_row_1_equipment_verify_expected_consumable_part_number_2_part_number() {
-		assertEquals("OZ56-212", esr.getEquipConsPrtNum2());
-	}
+	
+//	@Test
+//	void assert_find_equipment_by_id_1_is_stihl() {
+//		EquipmentServiceReference t = dao.findById(1);
+//		assertNotNull(esr);
+//		assertEquals("Stihl", t.getEquipManf());
+//	}
+	
+
 }
