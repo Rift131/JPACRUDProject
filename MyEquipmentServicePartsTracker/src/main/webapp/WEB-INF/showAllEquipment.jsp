@@ -97,12 +97,13 @@
 						<p>${result.equipNotes }</p>
 	
 <form action="deleteEquipment.do" method="POST">
-<input type="hidden" value="${result.id}" name="DeleteThisEquipment" />
+<!-- Fix of changing the name to "id" -->
+<input type="hidden" value="${result.id}" name="id" />
 <input type="submit" value="Delete" class="delete"/>
    </form>
 <form action="updateEquipment.do" method="GET">
 <!-- the name attribute must match the parameter name of the method it's being passed to -->
-<input type="hidden" value="${result.id}" name="id" />
+<input type="hidden" value="${result.id}" name="id" /> 
 <input type="submit" value="Update" class="update"/> 
 </form> 
 				</form>	
