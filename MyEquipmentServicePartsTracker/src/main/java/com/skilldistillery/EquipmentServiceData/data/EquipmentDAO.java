@@ -2,6 +2,8 @@ package com.skilldistillery.EquipmentServiceData.data;
 
 import java.util.List;
 
+import javax.persistence.TypedQuery;
+
 import com.skilldistillery.EquipmentServiceData.entities.EquipmentServiceReference;
 
 public interface EquipmentDAO {
@@ -14,10 +16,12 @@ public interface EquipmentDAO {
 	List<EquipmentServiceReference> findAllEquipment();
 	
 	// U: UPDATE
-	EquipmentServiceReference update(int id, EquipmentServiceReference equipment);
+	EquipmentServiceReference update(Integer id);
 	
 	// D: DESTROY
 	boolean destroy(int id);
+
+
 
 
 	

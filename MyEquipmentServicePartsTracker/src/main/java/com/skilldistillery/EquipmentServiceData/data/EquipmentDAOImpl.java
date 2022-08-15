@@ -51,154 +51,153 @@ public class EquipmentDAOImpl implements EquipmentDAO {
 
 	@Override
 	public List<EquipmentServiceReference> findByKeyword(String input) {
-		// List<EquipmentServiceReference> allMatches = null;
-		String queryInput = input;
+		List<EquipmentServiceReference> allMatches = null;
+		System.out.println("Supplied String to findByKeyword: " + input);
 		//List<EquipmentServiceReference> query = ((List<EquipmentServiceReference>) em.createQuery;
-		// String jpql = 
-		TypedQuery<EquipmentServiceReference> createQuery = em.createQuery("SELECT esr  FROM EquipmentServiceReference esr WHERE esr.equipName LIKE :name OR esr.equipManf LIKE :manufacturer OR esr.equipMdl LIKE :model", EquipmentServiceReference.class);
-		
-		List<EquipmentServiceReference> equipmentMatches = createQuery
-				.setParameter("name", queryInput)
-				.setParameter("manufacturer", queryInput)
-				.setParameter("model", queryInput)
+		String jpql = "SELECT esr  FROM EquipmentServiceReference esr WHERE esr.equipName LIKE :bindVar OR esr.equipManf LIKE :bindVar OR esr.equipMdl LIKE :bindVar";
+		allMatches = em.createQuery(jpql, EquipmentServiceReference.class)
+				.setParameter("bindVar", input)
 				.getResultList();
+		// TypedQuery<EquipmentServiceReference> createQuery = em.createQuery("SELECT esr  FROM EquipmentServiceReference esr WHERE esr.equipName LIKE :name OR esr.equipManf LIKE :manufacturer OR esr.equipMdl LIKE :model", EquipmentServiceReference.class);
+		
+		// List<EquipmentServiceReference> equipmentMatches = (List<EquipmentServiceReference>) createQuery
 				
 
-		return equipmentMatches;
+		return allMatches;
 	}
 	// ***********************************************
 	// U: UPDATE
 	// ***********************************************
 	@Override
-	public EquipmentServiceReference update(int id, EquipmentServiceReference esr) {
+	public EquipmentServiceReference update(Integer id) {
 		
 		EquipmentServiceReference managedEsr = em.find(EquipmentServiceReference.class, id);
-
+System.out.println("inside update: ESR Object: " + managedEsr);
 		if (managedEsr != null) {
 			// update the managed object 
 			// pre-populate the form with the existing values to avoid verbose code checking each value for being null or not
 			if (managedEsr.getEquipName()!= null) {
-				managedEsr.setEquipName(esr.getEquipName());
+				managedEsr.setEquipName(managedEsr.getEquipName());
 				
 				}
 			if (managedEsr.getEquipManf()!= null) {
-				managedEsr.setEquipManf(esr.getEquipManf());
+				managedEsr.setEquipManf(managedEsr.getEquipManf());
 				}
 			
 			if (managedEsr.getEquipMdl()!= null) {
-				managedEsr.setEquipMdl(esr.getEquipMdl());
+				managedEsr.setEquipMdl(managedEsr.getEquipMdl());
 				}
 			
 			if (managedEsr.getEquipSerNum()!= null) {
-				managedEsr.setEquipSerNum(esr.getEquipSerNum());
+				managedEsr.setEquipSerNum(managedEsr.getEquipSerNum());
 				}
 			
 			if (managedEsr.getEngManf()!= null) {
-				managedEsr.setEngManf(esr.getEngManf());
+				managedEsr.setEngManf(managedEsr.getEngManf());
 				}
 			
 			if (managedEsr.getEngMdl()!= null) {
-				managedEsr.setEngMdl(esr.getEngMdl());
+				managedEsr.setEngMdl(managedEsr.getEngMdl());
 				}
 			
 			if (managedEsr.getEngSerNum()!= null) {
-				managedEsr.setEngSerNum(esr.getEngSerNum());
+				managedEsr.setEngSerNum(managedEsr.getEngSerNum());
 				}
 			
 			if (managedEsr.getEngOilManf()!= null) {
-				managedEsr.setEngOilManf(esr.getEngOilManf());
+				managedEsr.setEngOilManf(managedEsr.getEngOilManf());
 				}
 			
 			if (managedEsr.getEngOilType()!= null) {
-				managedEsr.setEngOilType(esr.getEngOilType());
+				managedEsr.setEngOilType(managedEsr.getEngOilType());
 				}
 			
 			if (managedEsr.getEngOilViscGrd()!= null) {
-				managedEsr.setEngOilViscGrd(esr.getEngOilViscGrd());
+				managedEsr.setEngOilViscGrd(managedEsr.getEngOilViscGrd());
 				}
 			
 			if (managedEsr.getEngOilFltrManf()!= null) {
-				managedEsr.setEngOilFltrManf(esr.getEngOilFltrManf());
+				managedEsr.setEngOilFltrManf(managedEsr.getEngOilFltrManf());
 				}
 			
 			if (managedEsr.getEngOilFltrPrtNum()!= null) {
-				managedEsr.setEngOilFltrPrtNum(esr.getEngOilFltrPrtNum());
+				managedEsr.setEngOilFltrPrtNum(managedEsr.getEngOilFltrPrtNum());
 				}
 			
 			if (managedEsr.getEngAirFltrManf()!= null) {
-				managedEsr.setEngAirFltrManf(esr.getEngAirFltrManf());
+				managedEsr.setEngAirFltrManf(managedEsr.getEngAirFltrManf());
 				}
 			
 			if (managedEsr.getEngAirFltrPrtNum()!= null) {
-				managedEsr.setEngAirFltrPrtNum(esr.getEngAirFltrPrtNum());
+				managedEsr.setEngAirFltrPrtNum(managedEsr.getEngAirFltrPrtNum());
 				}
 			
 			if (managedEsr.getEngFuelSpec()!= null) {
-				managedEsr.setEngFuelSpec(esr.getEngFuelSpec());
+				managedEsr.setEngFuelSpec(managedEsr.getEngFuelSpec());
 				}
 			
 			if (managedEsr.getEngFuelFltrManf()!= null) {
-				managedEsr.setEngFuelFltrManf(esr.getEngFuelFltrManf());
+				managedEsr.setEngFuelFltrManf(managedEsr.getEngFuelFltrManf());
 				}
 			
 			if (managedEsr.getEngFuelFltrPrtNum()!= null) {
-				managedEsr.setEngFuelFltrPrtNum(esr.getEngFuelFltrPrtNum());
+				managedEsr.setEngFuelFltrPrtNum(managedEsr.getEngFuelFltrPrtNum());
 				}
 			
 			if (managedEsr.getEngFuelOil()!= null) {
-				managedEsr.setEngFuelOil(esr.getEngFuelOil());
+				managedEsr.setEngFuelOil(managedEsr.getEngFuelOil());
 				}
 			
 			if (managedEsr.getEngFuelOilManf()!= null) {
-				managedEsr.setEngFuelOilManf(esr.getEngFuelOilManf());
+				managedEsr.setEngFuelOilManf(managedEsr.getEngFuelOilManf());
 				}
 			
 			if (managedEsr.getEngFuelOilName()!= null) {
-				managedEsr.setEngFuelOilName(esr.getEngFuelOilName());
+				managedEsr.setEngFuelOilName(managedEsr.getEngFuelOilName());
 				}
 			
 			if (managedEsr.getEngFuelOilSerNum()!= null) {
-			managedEsr.setEngFuelOilSerNum(esr.getEngFuelOilSerNum());
+			managedEsr.setEngFuelOilSerNum(managedEsr.getEngFuelOilSerNum());
 			}
 			
 			if (managedEsr.getEquipConsName()!= null) {
-				managedEsr.setEquipConsName(esr.getEquipConsName());
+				managedEsr.setEquipConsName(managedEsr.getEquipConsName());
 				}
 			
 			if (managedEsr.getEquipConsManf()!= null) {
-				managedEsr.setEquipConsManf(esr.getEquipConsManf());
+				managedEsr.setEquipConsManf(managedEsr.getEquipConsManf());
 				}
 			
 			if (managedEsr.getEquipConsPrtNum()!= null) {
-				managedEsr.setEquipConsPrtNum(esr.getEquipConsPrtNum());
+				managedEsr.setEquipConsPrtNum(managedEsr.getEquipConsPrtNum());
 				}
 			
 			if (managedEsr.getEquipConsName2()!= null) {
-				managedEsr.setEquipConsName2(esr.getEquipConsName2());
+				managedEsr.setEquipConsName2(managedEsr.getEquipConsName2());
 				}
 			
 			if (managedEsr.getEquipConsManf2()!= null) {
-				managedEsr.setEquipConsManf2(esr.getEquipConsManf2());
+				managedEsr.setEquipConsManf2(managedEsr.getEquipConsManf2());
 				}
 			
 			if (managedEsr.getEquipConsPrtNum2()!= null) {
-				managedEsr.setEquipConsPrtNum2(esr.getEquipConsPrtNum2());
+				managedEsr.setEquipConsPrtNum2(managedEsr.getEquipConsPrtNum2());
 				}
 			
 			if (managedEsr.getEquipConsName3()!= null) {
-				managedEsr.setEquipConsName3(esr.getEquipConsName3());
+				managedEsr.setEquipConsName3(managedEsr.getEquipConsName3());
 				}
 			
 			if (managedEsr.getEquipConsManf3()!= null) {
-				managedEsr.setEquipConsManf3(esr.getEquipConsManf3());
+				managedEsr.setEquipConsManf3(managedEsr.getEquipConsManf3());
 				}
 			
 			if (managedEsr.getEquipConsPrtNum3()!= null) {
-				managedEsr.setEquipConsPrtNum3(esr.getEquipConsPrtNum3());
+				managedEsr.setEquipConsPrtNum3(managedEsr.getEquipConsPrtNum3());
 				}
 			// PROBLEM: APPEND INSTEAD OF RESETTING. Problem can be fixed with pre-populating the entries in the JSP.
 			if (managedEsr.getEquipNotes()!= null) {
-				managedEsr.setEquipNotes(esr.getEquipNotes());
+				managedEsr.setEquipNotes(managedEsr.getEquipNotes());
 				}
 		}
 	// tranactions (begin and commit) and emfs already exist

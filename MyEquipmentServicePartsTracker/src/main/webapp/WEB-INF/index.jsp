@@ -21,7 +21,7 @@
    
  <h3>Find your equipment by keyword search</h3>
     <form action="searchByKeyword.do" method="GET">
-     <input type="text" name="data" /><br />
+     <input type="text" name="input" /><br />
      <br>
      <input type="submit" value="Search" class="button"/><br />
       <br></br>

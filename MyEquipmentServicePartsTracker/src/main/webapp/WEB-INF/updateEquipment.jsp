@@ -11,11 +11,22 @@
  <a href= "home.do" >Home</a>
  <main class="container-fluid">
  <h1>Update Equipment</h1>
+ 
+ <c:choose>
+
+		<c:when test="${empty result }">
+			<h2>No equipment listed under that ID number</h2>
+		</c:when>
+
+		<c:otherwise>
+ 
+ 
+ 
  	<form action="updatedEquipment.do" method="GET">
-		<strong>MANF:</strong> <input type="text" name="equipManf" value="${result.equipManf}"/> <br /> 
-		<strong>CATEGORY:</strong> <input type="text" name="equipName" value="${result.equipName }"/><br />
+		<strong>MANF:</strong> <input type="text" name="equipManf" value="<c:out value="${result.equipManf}"/>"> <br /> 
+		<strong>CATEGORY:</strong> <input type="text" name="equipName" value="<c:out value="${result.equipName }"/>"><br />
 		<label for="equipName"><em> Category Examples: Lawn mower. Chainsaw, Weed Trimmer</em></label> <br /> 
-		<strong>Model:</strong> <input type="text" name="equipMdl" value="${result.equipMdl} }"/> <br /> 
+		<strong>Model:</strong> <input type="text" name="equipMdl" value="<c:out value="${result.equipMdl}"/>"> <br /> 
 		<strong>S/N:</strong> <input type="text" name="equipSerNum" /> <br /> 
 		<br></br>
 		<strong>ENGINE MANF:</strong> <input type="text" name="engManf" /> <br /> 
@@ -58,10 +69,14 @@
         <label for="equipNotes">NOTES</label>
         <textarea rows="12" cols="50" class="equipNotes"></textarea>
 		<br></br>
-  
-		<a href="createEquipment.do"><input type="submit" value="Submit" class="button" /></a><br /> 
-
 	</form>
+		</c:otherwise>
+	</c:choose>
+<!-- the name attribute must match the parameter name of the method it's being passed to -->
+		<form action="updatedEquipment.do" method="GET">
+<input type="hidden" value="${result.id} " name="id" />
+<input type="submit" value="Update" class="update"/> 
+</form> 
 	</main>
 </body>
 </html>

@@ -64,7 +64,9 @@ public class EquipmentController {
 	}
 	
 	@RequestMapping(path={"searchByKeyword.do"})
-	public String searchByKeyword(Model model) {
+	public String searchByKeyword(String input, Model model) {
+		List<EquipmentServiceReference> matches = dao.findByKeyword(input);
+		model.addAttribute("input", matches);
 		return "searchByKeyword";
 	}
 	@RequestMapping(path={"showAllEquipment.do"})
@@ -80,13 +82,15 @@ public class EquipmentController {
 	// Present the form
 	@RequestMapping(path= {"updateEquipment.do"})
 	public String updateEquipment(Integer id, Model model) {
-		//EquipmentServiceReference equipById = dao.findById(esr.getId());
+		EquipmentServiceReference equipById = dao.update(id);
+//		// dao find by id
+		model.addAttribute("result", equipById);
 		return "updateEquipment";
 	}
 	// Present the updates
 	@RequestMapping(path= {"updatedEquipment.do"})
-	public String updatedEquipment(EquipmentServiceReference esr, Model model) {
-		EquipmentServiceReference equipUpdated = dao.update(esr.getId(), esr);
+	public String updatedEquipment(Integer id, Model model) {
+		EquipmentServiceReference equipUpdated = dao.findById(id);
 		model.addAttribute("result", equipUpdated);
 		return "updatedEquipment";
 	}
