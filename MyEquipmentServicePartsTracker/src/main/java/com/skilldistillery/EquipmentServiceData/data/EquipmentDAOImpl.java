@@ -100,6 +100,7 @@ System.out.println("inside update: ESR Object: " + managedEsr);
 				managedEsr.setEquipConsManf(esr.getEquipConsManf());
 				managedEsr.setEquipConsPrtNum(esr.getEquipConsPrtNum());
 				managedEsr.setEquipConsName2(esr.getEquipConsName2());
+				managedEsr.setEquipConsName2(esr.getEquipConsManf2());
 				managedEsr.setEquipConsPrtNum2(esr.getEquipConsPrtNum2());
 				managedEsr.setEquipConsName3(esr.getEquipConsName3());
 				managedEsr.setEquipConsManf3(esr.getEquipConsManf3());

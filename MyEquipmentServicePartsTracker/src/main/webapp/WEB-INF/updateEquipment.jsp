@@ -27,7 +27,7 @@
 		<strong>CATEGORY:</strong> <input type="text" name="equipName" value="<c:out value="${result.equipName }"/>"><br />
 		<label for="equipName"><em> Category Examples: Lawn mower. Chainsaw, Weed Trimmer</em></label> <br /> 
 		<strong>Model:</strong> <input type="text" name="equipMdl" value="<c:out value="${result.equipMdl}"/>"> <br /> 
-		<strong>S/N:</strong> <input type="text" name="equipSerNum" /> <br /> 
+		<strong>S/N:</strong> <input type="text" name="equipSerNum" value="<c:out value="${result.equipSerNum}"/>"> <br /> 
 		<br></br>
 		<strong>ENGINE MANF:</strong> <input type="text" name="engManf" value="<c:out value="${result.engManf}"/>"> <br /> 
 		<strong>ENGINE MODEL:</strong> <input type="text" name="engMdl" value="<c:out value="${result.engMdl}"/>"> <br /> 

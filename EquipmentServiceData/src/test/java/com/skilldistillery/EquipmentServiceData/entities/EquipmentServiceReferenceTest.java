@@ -61,7 +61,7 @@ class EquipmentServiceReferenceTest {
 	}
 	@Test
 	void test_row_1_equipment_verify_expected_oil_manf() {
-		assertEquals("FRAM", esr.getEngFuelFltrManf());
+		assertEquals("Stihl", esr.getEngFuelFltrManf());
 	}
 	@Test
 	void test_row_1_equipment_verify_expected_consumable_part_number_2_part_number() {
